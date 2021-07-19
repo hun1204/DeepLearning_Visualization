@@ -11,6 +11,8 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * 다시 Relu, dropout으로 과적합, 기울기 소실 문제가 해결되고 GPU를 사용한 행렬연산의 가속화로 딥러닝이 부활함.
 * Convolution&Pooling이 나오면서 비약적으로 발전! OBJECT DETECTION, SEGMETATION, Reinforcement Learning, GAN등 다양한 형태의 딥러닝으로 발전함.
 
+![1  feed forward](https://user-images.githubusercontent.com/43362034/126163548-a66b3a69-725f-4571-a3d6-3d27088ad068.JPG)
+
 ### 2. Image Processing
 * 영상 처리의 분야/geometric transform, enhancement, restoration, compression, object recognition
 * object recognition / 영상 내의 존재하는 얼굴의 위치를 찾고 얼굴에 해당하는 사람을 인식하는 기술
@@ -25,3 +27,6 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * Tensor를 흘려보내며(flow) 데이터를 처리 / 여기서 Tensor는 임의의 차원을 갖는 배열이다.
 * Graph-node와edge의 조합 /Node-Operation,Variable,Constant/ Edge-노드간의 연결
 * 그래프를 생성해서 실행시키는것이 텐서플로우이다. 현재는 2.x 버젼이 나왔으며 eager excution이 가능한것이 특징이다.
+
+
+
