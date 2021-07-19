@@ -38,3 +38,6 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * CNN에서 출력데이터가 줄어드는것을 막기 위해 Padding을 사용하며 Pooling layer를 통해 Feature map의 크기를 줄이거나 특정 데이터를 강조함.
 * CNN은 이미지 공간 정보를 유지하면서 인접 이미지와의 특징을 효과적으로 인식하기 위해 쓰인다.
 * 추출한 이미지의 특징을 모으고 강화하기 위해 Poolinglayer를 사용하며 필터를 공유 파라미터로 사용하기 때문에 ANN에 비해 파라미터가 매우 적음.
+
+![2  CNN](https://user-images.githubusercontent.com/43362034/126166764-8eac5e3f-f0a3-413f-8910-14ee216e8749.JPG)
+
