@@ -41,3 +41,13 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![2  CNN](https://user-images.githubusercontent.com/43362034/126166764-8eac5e3f-f0a3-413f-8910-14ee216e8749.JPG)
 
+### 5. Pretrained Model
+* 작은 이미지 데이터셋에 딥러닝을 적용하는 매우 효과적인 방법으로 pretrained model을 사용한다.
+* 사전 훈련된 네트워크는 대량의 데이터셋에서 미리 훈련되어 저장된 네트워크이다.(ImageNet은 1.4백만 개의 레이블, 1000개의 클래스로 학습)
+* 이렇게 학습된 특성을 다른 문제에 적용할 수 있는 이런 유연성이 딥러닝의 핵심 장점.
+* VGG, ResNet, Inception, Inception-ResNet, Xception 등 다양한 모델들이 존재.
+* VGG를 예시로 Input -> Trained convolutional base -> Trained classifier -> Prediction으로 이루어져있으며 
+* 합성곱 층으로 학습된 표현은 더 일반적이여서 재사용이 용이하고 분류기는 모델이 훈련된 클래스 집합에 특화되어 있어 재사용이 힘들다.
+* 따라서 상황에 맞게 Trained classifier를 사용 안하거나 새로운 Classifier로 교체하여 사용할 수도 있다.
+
+![pretrained model](https://user-images.githubusercontent.com/43362034/126261302-29380ba0-c6f3-45c0-ac34-cbe13e437f82.PNG)
