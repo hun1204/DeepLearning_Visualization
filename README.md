@@ -51,3 +51,7 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * 따라서 상황에 맞게 Trained classifier를 사용 안하거나 새로운 Classifier로 교체하여 사용할 수도 있다.
 
 ![pretrained model](https://user-images.githubusercontent.com/43362034/126261302-29380ba0-c6f3-45c0-ac34-cbe13e437f82.PNG)
+
+
+### 6. Data Agmentation
+* 
