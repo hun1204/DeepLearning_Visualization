@@ -53,12 +53,13 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 ![pretrained model](https://user-images.githubusercontent.com/43362034/126261302-29380ba0-c6f3-45c0-ac34-cbe13e437f82.PNG)
 
 
-### 6. Data Agmentation
+### 6. Data Agmentation, Dropout
 * 수백만개에 이르는 매개변수를 제대로 훈련하기 위해서 많은 데이터가 필요하며 그 품질이 우수해야 한다.
 * 이 때 매개변수를 훈련할 충분한 학습 데이터를 확보하지 않으면 모델의 성능을 저해하는 과적합(overfitting)이 발생한다.
 * 양질의 데이터(의료 영상 데이터는 의사가 직접 데이터셋을 구축해야 하므로 비용이 많이 듦)를 확보하기란 쉽지 않다.
 * 이럴 때 딥러닝 모델을 충분히 훈련하기 위한 데이터를 확보하는 기법이 Data Augmentation이며 
 * 구글에서 발표한 데이터에 적합한 어그먼테이션 정책을 자동으로 찾아주는 알고리즘 -> AutoAugmentation (https://arxiv.org/abs/1805.09501)
+* Dropout은 데이터가 부족할 때 과적합을 방지하기 위해 weight의 일부만 참여시키는 기법이며 Computer Vision의 경우 데이터가 충분하지 못한 경우가 많아 주로 사용한다.
 
 ![augmentation](https://user-images.githubusercontent.com/43362034/126589523-ac600cbe-ada7-4712-b23e-5864afcc9f14.PNG)
 
@@ -67,3 +68,19 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * Pose estimation등의 과제에서 잘 활용되었으나 비대칭 구조가 복잡해 뒤이어 연구를 중단.
 
 ![7  inception](https://user-images.githubusercontent.com/43362034/126630134-054e34a8-11ee-4d0d-8774-2260cc5ed6b9.JPG)
+
+
+### 8. Gradient vanishing & exploding
+* 역전파 과정에서 입력층에 가까울수록 기울기가 점점 작아지는 현상을 vanishing 점점 커져 값이 발산될 때는Exploding이라고 한다.
+* 기울기 소실을 완화하기 위해 은닉층에서 ReLU, Leaky ReLU를 사용함.
+* 가중치 초기화를 시켜 들어갈때와 나갈때 분산을 맞춰줘 기울기 소실, 발산을 방지하는 방법도 있다.
+* Xiaveir initialization 여러층의 기울기 분산 사이에 균형을 맞춰 특정 층에서 큰 영향을 받거나 다른층이 뒤쳐지는 것을 줄여줌.(ReLU와는 상성이 좋지 않음) -> None, tanh, simgoid, softmax
+* He initialization 세이비어 유사하지만 다음층의 뉴런의 수를 반영하지 않는다.(ReLU와 상성이 좋음) -> ReLU
+* 각 activation function들의 성능을 비교할 떄 초기화에 필요한 seed를 고정시켜줄 필요가 있다.
+* 이렇게 initialization을 적용해도 소실, 발산이 생겨 새로운 개념이 등장한다. -> BatchNormalization(2015)
+* BatchNormalization 미니배치단위로 정규화 하는것이며 입력에 대해 평균을 0으로 만들고 분산을 계산해 정규화한다. 정규화 한 데이터를 스케일과 시프트를 수행해 다음 레이어에 일정한 범위의 값들만 전달되게 한다.
+* 드롭아웃과 비슷한 효과를 내며 학습의 가속화와 성능향상을 확인할 수 있다.
+* CNN에서는 BN의 시프트 과정이 bias와 같은역할을 하므로 False 해줘도 됨.
+* 한계점은 배치 크기가 작으면 잘 동작하지 않으며 RNN에 적용이 어렵다는 점이 있다.
+
+![8  BatchNom](https://user-images.githubusercontent.com/43362034/126639702-030f593d-7d0f-4b7e-bb26-3d77ff6be951.JPG)
