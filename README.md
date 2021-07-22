@@ -62,7 +62,7 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![augmentation](https://user-images.githubusercontent.com/43362034/126589523-ac600cbe-ada7-4712-b23e-5864afcc9f14.PNG)
 
-### 7.Inception module(GoogleLeNet)
+### 7. Inception module(GoogleLeNet)
 * 전처리, 가중치 초기화 노력을 넘어서 네트워크 구조를 변화시켰다. 큰사이즈의 Conv filter를 적용하기 전에 1x1 conv를 통과시켜 연산 효율을 높이고 이미지내 비선형적인 특징들을 추출해낸다.(Bootleneck structure)
 * Pose estimation등의 과제에서 잘 활용되었으나 비대칭 구조가 복잡해 뒤이어 연구를 중단.
 
