@@ -63,14 +63,8 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![augmentation](https://user-images.githubusercontent.com/43362034/126589523-ac600cbe-ada7-4712-b23e-5864afcc9f14.PNG)
 
-### 7. Inception module(GoogleLeNet)
-* 전처리, 가중치 초기화 노력을 넘어서 네트워크 구조를 변화시켰다. 큰사이즈의 Conv filter를 적용하기 전에 1x1 conv를 통과시켜 연산 효율을 높이고 이미지내 비선형적인 특징들을 추출해낸다.(Bootleneck structure)
-* Pose estimation등의 과제에서 잘 활용되었으나 비대칭 구조가 복잡해 뒤이어 연구를 중단.
 
-![7  inception](https://user-images.githubusercontent.com/43362034/126630134-054e34a8-11ee-4d0d-8774-2260cc5ed6b9.JPG)
-
-
-### 8. Gradient vanishing & exploding
+### 7. Gradient vanishing & exploding
 * 역전파 과정에서 입력층에 가까울수록 기울기가 점점 작아지는 현상을 vanishing 점점 커져 값이 발산될 때는Exploding이라고 한다.
 * 기울기 소실을 완화하기 위해 은닉층에서 ReLU, Leaky ReLU를 사용함.
 * 가중치 초기화를 시켜 들어갈때와 나갈때 분산을 맞춰줘 기울기 소실, 발산을 방지하는 방법도 있다.
@@ -84,3 +78,20 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * 한계점은 배치 크기가 작으면 잘 동작하지 않으며 RNN에 적용이 어렵다는 점이 있다.
 
 ![8  BatchNom](https://user-images.githubusercontent.com/43362034/126639702-030f593d-7d0f-4b7e-bb26-3d77ff6be951.JPG)
+
+### 8. LeNet(Inception module), ResNet, DenseNet
+* LeNet(2014)은 구글에서 발표했으며 전처리, 가중치 초기화 노력을 넘어서 네트워크 구조를 변화시켰다. 큰사이즈의 Conv filter를 적용하기 전에 1x1 conv를 통과시켜 연산 효율을 높이고 이미지내 비선형적인 특징들을 추출해낸다.(Bootleneck structure)
+* Pose estimation등의 과제에서 잘 활용되었으나 비대칭 구조가 복잡해 뒤이어 연구를 중단.
+
+![7  inception](https://user-images.githubusercontent.com/43362034/126630134-054e34a8-11ee-4d0d-8774-2260cc5ed6b9.JPG)
+
+* ResNet(2015)은 MS에서 발표했으며 50개 이상의 레이어를 쌓았을 때 큰 효과를 보지 못해 제시된 개념
+* 몇 레이어를 거쳐 나온 F(x) 값에 input값인 x를 더해 다음 레이어의 인풋 값으로 넣어줘 기울기 소실을 줄일 수 있음을 알아냈다.
+
+![RESNET](https://user-images.githubusercontent.com/43362034/126643622-ada08f6c-49b7-4034-b462-ec031d9cff14.JPG)
+
+* DenseNet(2017)은 ResNet의 아이디어를 이어받아 밀도높은 네트워크를 구성한다. ResNet과 다른점은 Add연산 대신 Concatenate연산을 사용한 점이다. 
+* DenseNet은 layer마다 굉장히 작은 채널 개수로 구성해 아웃풋값에 Concat 시켜 효율적으로 성능을 올린다.
+* 또한 중간에 1x1 Conv, Bottleneck, Transition layer를 사용해 성능을 올려주었다.
+
+![DenseNet](https://user-images.githubusercontent.com/43362034/126644257-7bbd602a-4970-4821-80fc-e10b8aa16c32.JPG)
