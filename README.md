@@ -95,3 +95,6 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * 또한 중간에 1x1 Conv, Bottleneck, Transition layer를 사용해 성능을 올려주었다.
 
 ![DenseNet](https://user-images.githubusercontent.com/43362034/126644257-7bbd602a-4970-4821-80fc-e10b8aa16c32.JPG)
+
+CNN의 역사 참고 -> 다음 SE_NET
+https://junklee.tistory.com/111
