@@ -54,4 +54,10 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 
 ### 6. Data Agmentation
-* 
+* 수백만개에 이르는 매개변수를 제대로 훈련하기 위해서 많은 데이터가 필요하며 그 품질이 우수해야 한다.
+* 이 때 매개변수를 훈련할 충분한 학습 데이터를 확보하지 않으면 모델의 성능을 저해하는 과적합(overfitting)이 발생한다.
+* 양질의 데이터(의료 영상 데이터는 의사가 직접 데이터셋을 구축해야 하므로 비용이 많이 듦)를 확보하기란 쉽지 않다.
+* 이럴 때 딥러닝 모델을 충분히 훈련하기 위한 데이터를 확보하는 기법이 Data Augmentation이며 
+* 구글에서 발표한 데이터에 적합한 어그먼테이션 정책을 자동으로 찾아주는 알고리즘 -> AutoAugmentation (https://arxiv.org/abs/1805.09501)
+
+![augmentation](https://user-images.githubusercontent.com/43362034/126589523-ac600cbe-ada7-4712-b23e-5864afcc9f14.PNG)
