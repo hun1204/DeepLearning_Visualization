@@ -42,7 +42,7 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 ![2  CNN](https://user-images.githubusercontent.com/43362034/126166764-8eac5e3f-f0a3-413f-8910-14ee216e8749.JPG)
 
 ### 5. Pretrained Model
-* 작은 이미지 데이터셋에 딥러닝을 적용하는 매우 효과적인 방법으로 pretrained model을 사용한다.
+* 작은 이미지 데이터셋ㄱ에 딥러닝을 적용하는 매우 효과적인 방법으로 pretrained model을 사용한다.
 * 사전 훈련된 네트워크는 대량의 데이터셋에서 미리 훈련되어 저장된 네트워크이다.(ImageNet은 1.4백만 개의 레이블, 1000개의 클래스로 학습)
 * 이렇게 학습된 특성을 다른 문제에 적용할 수 있는 이런 유연성이 딥러닝의 핵심 장점.
 * VGG, ResNet, Inception, Inception-ResNet, Xception 등 다양한 모델들이 존재.
@@ -79,8 +79,8 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![8  BatchNom](https://user-images.githubusercontent.com/43362034/126639702-030f593d-7d0f-4b7e-bb26-3d77ff6be951.JPG)
 
-### 8. LeNet(Inception module), ResNet, DenseNet
-* LeNet(2014)은 구글에서 발표했으며 전처리, 가중치 초기화 노력을 넘어서 네트워크 구조를 변화시켰다. 큰사이즈의 Conv filter를 적용하기 전에 1x1 conv를 통과시켜 연산 효율을 높이고 이미지내 비선형적인 특징들을 추출해낸다.(Bootleneck structure)
+### 8. GooLeNet(Inception module), ResNet, DenseNet
+* GooLeNet(2014)은 구글에서 발표했으며 전처리, 가중치 초기화 노력을 넘어서 네트워크 구조를 변화시켰다. 큰사이즈의 Conv filter를 적용하기 전에 1x1 conv를 통과시켜 연산 효율을 높이고 이미지내 비선형적인 특징들을 추출해낸다.(Bootleneck structure)
 * Pose estimation등의 과제에서 잘 활용되었으나 비대칭 구조가 복잡해 뒤이어 연구를 중단.
 
 ![7  inception](https://user-images.githubusercontent.com/43362034/126630134-054e34a8-11ee-4d0d-8774-2260cc5ed6b9.JPG)
@@ -96,5 +96,9 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![DenseNet](https://user-images.githubusercontent.com/43362034/126644257-7bbd602a-4970-4821-80fc-e10b8aa16c32.JPG)
 
-CNN의 역사 참고 -> 다음 SE_NET
-https://junklee.tistory.com/111
+### 9. Unet - Segmentation
+* Unet은 바이오 메디컬 분야에서 기존의 이미지, 영상 처리분야에서 이미지 그 자체의 특정 영역을 Label로 표현하고자 구현된 모델
+* Segmentation에 특화된 네트워크이며 기존의 FCNet과 다른점은 Decoding 영역에 Pooling layer 대신 Up-sampling 영역을 추가한 것.
+* 지금은 이미지, 영상 처리 비전 등 다양한 영역에 적합한 알고리즘의 핵심 모델이 되었다.
+
+![Unet](https://user-images.githubusercontent.com/43362034/126736182-503d528a-3374-4662-9305-4fcebe2eb237.PNG)
