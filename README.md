@@ -96,10 +96,11 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ![DenseNet](https://user-images.githubusercontent.com/43362034/126644257-7bbd602a-4970-4821-80fc-e10b8aa16c32.JPG)
 
-### 9. Unet - Segmentation
+### 9. Unet - Segmentation , Mnet
 * Unet은 바이오 메디컬 분야에서 기존의 이미지, 영상 처리분야에서 이미지 그 자체의 특정 영역을 Label로 표현하고자 구현된 모델
 * Segmentation에 특화된 네트워크이며 기존의 FCNet과 다른점은 Decoding 영역에 Pooling layer 대신 Up-sampling 영역을 추가한 것.
 * 지금은 이미지, 영상 처리 비전 등 다양한 영역에 적합한 알고리즘의 핵심 모델이 되었다.
+* Mnet은 Unet의 앙옆에 다리를 추가한 네트워크로 더 복잡한 Residaul module 구조를 보여준다.
 
 ![Unet](https://user-images.githubusercontent.com/43362034/126736182-503d528a-3374-4662-9305-4fcebe2eb237.PNG)
 
@@ -111,3 +112,28 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * Excitation operation은 채널간의 의존성을 계산하며 (0~1)사이로 도출된 값을 입력값에 곱해준다.
 
 ![SE](https://user-images.githubusercontent.com/43362034/126889013-cc1c7d40-be51-43b6-9932-e1dcaa6b369b.JPG)
+
+### 11. Autoencoder
+* 단순히 입력을 출력으로 복사하는 신경망으로 self supervised learning이다.
+* 얼굴사진에 대해 학습된 Autoencoder는 얼굴 특유의 정보에 특화되어 있기 때문에 나무 사진에는 적용되지 않음.
+* unsupervised learning의 문제를 풀어낼 잠재적인 수단으로 생각되어 옴.
+* Autoencoder에 대해 정리를 잘 해놓은 사이트 https://excelsior-cjh.tistory.com/187
+
+![auto](https://user-images.githubusercontent.com/43362034/126891331-0e90328c-3d8d-4594-9e63-2e2c8c44f1a4.png)
+
+### 12. Visualizing What Convnets Learn
+* 딥러닝에서의 과정을 사람이 이해하기 쉬운 형태로 뽑거나 제시하기란 쉽지 않음.
+* ConvNet을 사용할 떄 중간층의 출력을 시각화하기, ConvNet필터를 시각화, 클래스 활성화에 대한 히트맵을 이미지에 시각화
+* 1. 중간층의 출력을 시각화하면 어떻게 입력들을 분해하는지를 보여준다.(2D 이미지로)
+* 첫째 층은 여러 종류의 edge감지기를 모아놓은 것이며 사진 초기 정보들이 모두 유지되어있다.
+* 상위 층으로 갈수록 점점 더 추상적이고 시각적으로 이해하기 어려운 특징(강아지 눈, 귀)들의 높은 수준의 개념을 인코딩해나가는 것을 볼 수 있다.
+* 깊이에 따라 관계없는 정보는 걸러내고 유용한 정보는 강조, 개선된다.
+* 2. ConvNet 필터를 시각화 할 때 필터들은 모델의 상위층으로 갈수록 점점 더 복잡해지는 특징을 띈다.
+* 3. 클래스 활성화의 히트맵을 시각화하면 어떤 컨브넷이 최종분류 결정에 기여하는지 이해가능하다.
+* 분류에 실수가 있는 경우 디버깅에 도움되며 이미지에 특정 물체가 있는 위치를 파악하는데 사용이 가능하다.
+* 일반적으로 클래스 활성화 맵(CAM) 시각화라고 한다. 
+* 입력 이미지가 주어지면 합성곱층에 있는 특성 맵의 출력을 추출한다.
+* 특성 맵의 모든 채널의 출력에 채널에 대한 클래스의 그래디언트 평균을 곱한다.
+
+![활성화 시각화](https://user-images.githubusercontent.com/43362034/126895142-f8e44071-3e6d-4149-913a-3dca0339a34c.JPG)
+
