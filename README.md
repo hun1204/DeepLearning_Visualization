@@ -102,3 +102,12 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * 지금은 이미지, 영상 처리 비전 등 다양한 영역에 적합한 알고리즘의 핵심 모델이 되었다.
 
 ![Unet](https://user-images.githubusercontent.com/43362034/126736182-503d528a-3374-4662-9305-4fcebe2eb237.PNG)
+
+
+### 10. SENet(Squeeze-and-Excitation Networks)
+* 네트워크 어디서든 바로 사용 가능하면 파라미터 증가량에 비해 모델 성능 향상도가 매우 크다.
+* Squeeze operation은 짜내는 연산으로 각 채널들의 중요한 정보만 추출해서 사용하는 것이다.
+* 논문에서는 중요한 정보를 추출할 떄 가장 일반적인 방법으로 GAP(Global Average Pooling)을 사용하며 다른 방법도 사용이 가능하다.
+* Excitation operation은 채널간의 의존성을 계산하며 (0~1)사이로 도출된 값을 입력값에 곱해준다.
+
+![SE](https://user-images.githubusercontent.com/43362034/126889013-cc1c7d40-be51-43b6-9932-e1dcaa6b369b.JPG)
