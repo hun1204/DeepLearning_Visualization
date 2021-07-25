@@ -140,7 +140,8 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 ### 13. Neural Style Transfer(2016)
 * 타깃 이미지의 콘텐츠를 보존하면서 참조 이미지의 스타일을 타깃 이미지에 적용시키는 네트워크
 * Content target + Style reference = Combination image
-* 이때 최소화 손실 함수는 다음과 같다.
-* loss = distance(style(reference_image) - style(generated_image)) + distance(content(original_img) - content(generated_image))
 * 네트워크 하위층에선 이미지의 전체적인 정보를 상위층일수록 전역적인 정보를 담게 된다.
-* ConvNet의 상위층의 추상적인 이미지콘텐츠를 가져와 타깃
+* Content - ConvNet의 상위층의 추상적인 이미지콘텐츠를 가져와 타깃 이미지로 삼는다. 이미지의 콘텐츠를 보존하는 역할을 수행함.
+* Style - 여러층을 거쳐 노이즈 이미지에서 이미지스타일의 Feature를 뽑아낸다. 이미지에서 여러 크기의 텍스쳐가 비슷하게 보이도록 역할을 수행함.
+
+![style transfer](https://user-images.githubusercontent.com/43362034/126906056-e1f046a8-ae80-4bba-a91d-caece4ad40e3.JPG)
