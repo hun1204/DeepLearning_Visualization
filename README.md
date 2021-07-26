@@ -145,3 +145,12 @@ These are basic code what I learned from 'ICT INOVATION Visualization Course'
 * Style - 여러층을 거쳐 노이즈 이미지에서 이미지스타일의 Feature를 뽑아낸다. 이미지에서 여러 크기의 텍스쳐가 비슷하게 보이도록 역할을 수행함.
 
 ![style transfer](https://user-images.githubusercontent.com/43362034/126906056-e1f046a8-ae80-4bba-a91d-caece4ad40e3.JPG)
+
+### 14. GAN (Generative Adversarial Networks)
+* 적대적 생성 신경망이라 불리며 기존에 배운 Autoencoder, Style Transfer와 다르다.
+* GAN은 모델을 두개를 사용한다 생성기, 판별기로 나뉜다. 생성기는 점점 판별기가 구분할 수 없게 이미지를 업데이트하며 판별기는 생성기가 만들어낸 이미지를 구분해낼 수 있게 업데이트한다.(결국엔 판별기가 똑똑해야함)
+* 반별기와 생성기가 서로 성능이 늘어나면 수렴(converge)된다.(학습종료)
+* GAN의 한계점은 어떤 이유로 fake data가 생성되었는지 알 수 없으며 생성된 가짜사진이 얼마나 진짜에 근사한지 판단하기 어렵다.(사람이 직접 평가해야하며, labeled data로 지도학습한 분류기 모델로 평가)
+* 또한 판별기의 약점만 생성기가 학습해 다양성을 잃은 이미지가 나오는 경우가 있고 생성기, 판별기가 균형있게 학습이 되지 않는 한계도 있다.
+
+![GAN](https://user-images.githubusercontent.com/43362034/126995907-6f16b777-969f-4022-8165-812ef7ed1f23.JPG)
