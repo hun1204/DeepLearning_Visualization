@@ -1,4 +1,4 @@
-# DeepLearning_Visualization_Basic
+# DeepLearning_Visualization
 These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ### 1. ANN(Artificial Neural Network) 인공신경망에서 딥러닝까지
