@@ -1,5 +1,4 @@
 # DeepLearning_Visualization
-These are basic code what I learned from 'ICT INOVATION Visualization Course'
 
 ### 1. ANN(Artificial Neural Network) 인공신경망에서 딥러닝까지
 * 인간의 신경구조를 복잡한 스위치들이 연결된 네트워크로 표현할 수 있다고 1943년도에 제안됨.
